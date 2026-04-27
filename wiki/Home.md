@@ -9,58 +9,69 @@ This course provides practical, hands-on training for data engineers to leverage
 ## 📚 Course Modules
 
 ### Module 1: Foundations of Multi-Model Prompt Engineering
+- [📖 View Module Content](https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers/blob/main/content/module1-foundations/README.md)
 - Understanding different model architectures and capabilities
 - Model selection criteria for data engineering tasks
 - Setting up multi-model development environment
 
 ### Module 2: Data Cleaning with Multi-Model Approaches
+- [📖 View Module Content](https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers/blob/main/content/module2-data-cleaning/README.md)
 - Automated data quality checks using LLMs
 - Schema inference and validation
 - Data standardization and normalization
 
 ### Module 3: ETL/ELT Pipeline Enhancement
+- [📖 View Module Content](https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers/blob/main/content/module3-etl-enhancement/README.md)
 - AI-powered data transformation
 - Intelligent error handling and logging
 - Pipeline optimization with AI assistance
 
 ### Module 4: Data Documentation Across Models
+- [📖 View Module Content](https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers/blob/main/content/module4-documentation/README.md)
 - Automated data dictionary generation
 - Documentation of data lineage and transformations
 - Schema documentation and metadata management
 
 ### Module 5: SQL and Query Optimization
+- [📖 View Module Content](https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers/blob/main/content/module5-sql-optimization/README.md)
 - Natural language to SQL conversion
 - Query optimization suggestions
 - Database schema understanding
 
 ### Module 6: Data Governance and Compliance
+- [📖 View Module Content](https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers/blob/main/content/module6-governance/README.md)
 - PII detection and masking
 - Compliance checking with AI
 - Data quality monitoring
 
 ### Module 7: Real-time Data Processing
+- [📖 View Module Content](https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers/blob/main/content/module7-realtime/README.md)
 - Stream processing with AI
 - Real-time anomaly detection
 - Low-latency AI inference
 
 ### Module 8: Advanced Multi-Model Data Engineering
+- [📖 View Module Content](https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers/blob/main/content/module8-advanced/README.md)
 - Multi-model orchestration
 - Model ensemble techniques
 - Advanced prompt strategies
 
 ### Module 9: Integration with Modern Data Stack
+- [📖 View Module Content](https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers/blob/main/content/module9-modern-stack/README.md)
 - Snowflake integration
 - Databricks integration
 - BigQuery integration
 - dbt and Airflow integration
 
 ### Module 10: Production Deployment & Multi-Model MLOps
+- [📖 View Module Content](https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers/blob/main/content/module10-production/README.md)
 - Deployment strategies
 - Monitoring and observability
 - A/B testing for models
 - Cost management
 
 ### Module 11: Model-Specific Prompt Engineering
+- [📖 View Module Content](https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers/blob/main/content/module11-model-specific/README.md)
 - OpenAI-specific techniques
 - Anthropic-specific techniques
 - Google Gemini-specific techniques
@@ -69,6 +80,7 @@ This course provides practical, hands-on training for data engineers to leverage
 - Cohere-specific techniques
 
 ### Module 12: Cost Optimization & Model Selection
+- [📖 View Module Content](https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers/blob/main/content/module12-cost-optimization/README.md)
 - Cost analysis and optimization
 - Model selection strategies
 - Budget management
