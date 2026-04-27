@@ -1,0 +1,46 @@
+name: Check Markdown Links
+
+on:
+  push:
+    paths:
+      - '.github/workflows/markdown-link-check.yml'
+      - '**/*.md'
+    branches: [ main, develop ]
+  pull_request:
+    paths:
+      - '.github/workflows/markdown-link-check.yml'
+      - '**/*.md'
+    branches: [ main, develop ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v1
+        with:
+          fail: true
+          no-progress: true
+          format: markdown
+          output: link-check-results.md
+          args: >
+            **/*.md 
+            --exclude-mail 
+            --exclude "https://github.com/your-username/*"
+            --exclude "https://your-username.github.io/*"
+
+      - name: Upload link check results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-check-results
+          path: link-check-results.md

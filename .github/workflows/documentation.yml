@@ -16,21 +16,33 @@ on:
       - 'GETTING_STARTED.md'
       - 'MODEL_GUIDE.md'
 
+permissions:
+  contents: read
+
 jobs:
   build-docs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        persist-credentials: false
     
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
     
+    - name: Install UV
+      uses: astral-sh/setup-uv@v7.3.1
+      with:
+        enable-cache: true
+    
     - name: Install documentation dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install mkdocs mkdocs-material
+        uv pip install mkdocs mkdocs-material
     
     - name: Build documentation
       run: |
@@ -74,18 +86,27 @@ jobs:
 
   link-check:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        persist-credentials: false
     
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
     
+    - name: Install UV
+      uses: astral-sh/setup-uv@v7.3.1
+      with:
+        enable-cache: true
+    
     - name: Install link checker
       run: |
-        python -m pip install --upgrade pip
-        pip install lychee
+        uv pip install lychee
     
     - name: Check documentation links
       run: |
