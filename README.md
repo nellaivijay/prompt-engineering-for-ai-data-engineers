@@ -1,5 +1,12 @@
 # Prompt Engineering for AI Data Engineers - Multi-Model Edition
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-passing-brightgreen.svg)](https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers/actions)
+[![Documentation](https://img.shields.io/badge/docs-mkdocs-blue.svg)](https://nellaivijay.github.io/prompt-engineering-for-ai-data-engineers/)
+[![Contributing](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
 A comprehensive, production-ready course on prompt engineering specifically designed for AI data engineers, featuring multi-model support across major AI platforms including OpenAI, Anthropic, Google Gemini, Meta Llama, Mistral, and more.
 
 ## 🎯 Course Overview
@@ -211,7 +218,7 @@ prompt-engineering-for-ai-data-engineers/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/prompt-engineering-for-ai-data-engineers.git
+git clone https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers.git
 cd prompt-engineering-for-ai-data-engineers
 
 # Install dependencies
