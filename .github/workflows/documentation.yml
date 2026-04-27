@@ -85,8 +85,8 @@ jobs:
     - name: Install link checker
       run: |
         python -m pip install --upgrade pip
-        pip install markdown-link-check
+        pip install lychee
     
     - name: Check documentation links
       run: |
-        find docs -name '*.md' -exec markdown-link-check {} \;
+        lychee README.md GETTING_STARTED.md MODEL_GUIDE.md CONTRIBUTING.md --no-progress
