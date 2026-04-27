@@ -1,0 +1,84 @@
+name: Notebook Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'content/**'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'content/**'
+
+jobs:
+  test-notebooks:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        module: ['module1-foundations', 'module2-data-cleaning', 'module3-etl-enhancement']
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Cache pip dependencies
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install nbconvert pytest jupyter
+    
+    - name: Convert notebooks to Python scripts
+      run: |
+        jupyter nbconvert --to python content/${{ matrix.module }}/*.ipynb
+    
+    - name: Run notebook tests
+      run: |
+        pytest content/${{ matrix.module }}/ --verbose
+      env:
+        PYTHONPATH: ${{ github.workspace }}
+    
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: test-results-${{ matrix.module }}
+        path: pytest-report.xml
+
+  notebook-quality:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install quality tools
+      run: |
+        python -m pip install --upgrade pip
+        pip install nbqa black isort flake8
+    
+    - name: Check notebook formatting
+      run: |
+        nbqa black content/ --check
+    
+    - name: Check notebook imports
+      run: |
+        nbqa isort content/ --check-only
+    
+    - name: Lint notebooks
+      run: |
+        nbqa flake8 content/

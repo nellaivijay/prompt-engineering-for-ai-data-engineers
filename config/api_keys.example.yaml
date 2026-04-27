@@ -1,0 +1,59 @@
+# API Keys Configuration Template
+# Copy this file to api_keys.yaml and fill in your actual API keys
+
+# OpenAI Configuration
+openai:
+  api_key: "your-openai-api-key-here"
+  model: "gpt-4-turbo"
+  temperature: 0.7
+  max_tokens: 2000
+
+# Anthropic Configuration
+anthropic:
+  api_key: "your-anthropic-api-key-here"
+  model: "claude-3-sonnet"
+  temperature: 0.7
+  max_tokens: 2000
+
+# Google AI Configuration
+google:
+  api_key: "your-google-api-key-here"
+  model: "gemini-pro"
+  temperature: 0.7
+  max_tokens: 2000
+
+# Cohere Configuration
+cohere:
+  api_key: "your-cohere-api-key-here"
+  model: "command-r"
+  temperature: 0.7
+  max_tokens: 2000
+
+# Local Model Configuration (Ollama)
+local:
+  ollama_base_url: "http://localhost:11434"
+  model: "llama3.1"
+  temperature: 0.7
+  num_ctx: 2048
+
+# Hugging Face Configuration
+huggingface:
+  api_token: "your-huggingface-token-here"
+  model: "meta-llama/Llama-2-7b-chat-hf"
+  temperature: 0.7
+  max_tokens: 2000
+
+# Cost Optimization Settings
+cost_optimization:
+  enable_caching: true
+  cache_ttl: 3600
+  budget_alert_threshold: 100.0
+  preferred_model_for_cost: "llama3.1"
+
+# Performance Settings
+performance:
+  enable_parallel_processing: true
+  max_workers: 4
+  timeout: 300
+  retry_attempts: 3
+  retry_delay: 1

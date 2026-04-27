@@ -1,0 +1,248 @@
+# Model Configuration File
+# Contains detailed information about supported AI models
+
+models:
+  openai:
+    gpt-4-turbo:
+      provider: "openai"
+      model_name: "gpt-4-turbo"
+      context_window: 128000
+      max_tokens: 4096
+      cost_per_1k_tokens:
+        input: 0.01
+        output: 0.03
+      strengths:
+        - "Complex reasoning"
+        - "SQL generation"
+        - "Data analysis"
+        - "Code generation"
+      best_for:
+        - "SQL query generation"
+        - "Complex data transformation"
+        - "Business logic extraction"
+      latency: "medium"
+      accuracy: "very_high"
+      
+    gpt-3.5-turbo:
+      provider: "openai"
+      model_name: "gpt-3.5-turbo"
+      context_window: 16385
+      max_tokens: 4096
+      cost_per_1k_tokens:
+        input: 0.0005
+        output: 0.0015
+      strengths:
+        - "Fast responses"
+        - "Cost-effective"
+        - "General purpose"
+      best_for:
+        - "Simple data cleaning"
+        - "Basic text processing"
+        - "Cost-sensitive tasks"
+      latency: "fast"
+      accuracy: "high"
+
+  anthropic:
+    claude-3-opus:
+      provider: "anthropic"
+      model_name: "claude-3-opus"
+      context_window: 200000
+      max_tokens: 4096
+      cost_per_1k_tokens:
+        input: 0.015
+        output: 0.075
+      strengths:
+        - "Long context processing"
+        - "Nuanced understanding"
+        - "Data cleaning"
+        - "Quality analysis"
+      best_for:
+        - "Data quality assessment"
+        - "Complex data cleaning"
+        - "Long document processing"
+      latency: "medium"
+      accuracy: "very_high"
+      
+    claude-3-sonnet:
+      provider: "anthropic"
+      model_name: "claude-3-sonnet"
+      context_window: 200000
+      max_tokens: 4096
+      cost_per_1k_tokens:
+        input: 0.003
+        output: 0.015
+      strengths:
+        - "Balanced performance"
+        - "Cost-effective"
+        - "Data engineering tasks"
+      best_for:
+        - "General data engineering"
+        - "Data documentation"
+        - "Schema inference"
+      latency: "fast"
+      accuracy: "high"
+      
+    claude-3-haiku:
+      provider: "anthropic"
+      model_name: "claude-3-haiku"
+      context_window: 200000
+      max_tokens: 4096
+      cost_per_1k_tokens:
+        input: 0.00025
+        output: 0.00125
+      strengths:
+        - "Very fast responses"
+        - "Low cost"
+        - "Real-time processing"
+      best_for:
+        - "Real-time data processing"
+        - "Quick data validation"
+        - "High-throughput tasks"
+      latency: "very_fast"
+      accuracy: "medium"
+
+  google:
+    gemini-pro:
+      provider: "google"
+      model_name: "gemini-pro"
+      context_window: 91728
+      max_tokens: 8192
+      cost_per_1k_tokens:
+        input: 0.00025
+        output: 0.0005
+      strengths:
+        - "Cost-effective"
+        - "Multimodal capabilities"
+        - "Google ecosystem integration"
+      best_for:
+        - "Cost-sensitive tasks"
+        - "Multimodal data processing"
+        - "Google Cloud integration"
+      latency: "fast"
+      accuracy: "high"
+      
+    gemini-flash:
+      provider: "google"
+      model_name: "gemini-flash"
+      context_window: 28000
+      max_tokens: 8192
+      cost_per_1k_tokens:
+        input: 0.000075
+        output: 0.00015
+      strengths:
+        - "Extremely fast"
+        - "Very low cost"
+        - "Real-time applications"
+      best_for:
+        - "Real-time data processing"
+        - "High-throughput tasks"
+        - "Latency-sensitive applications"
+      latency: "very_fast"
+      accuracy: "medium"
+
+  meta:
+    llama-3.1-70b:
+      provider: "meta"
+      model_name: "llama-3.1-70b"
+      context_window: 128000
+      max_tokens: 4096
+      cost_per_1k_tokens:
+        input: 0.0
+        output: 0.0
+      strengths:
+        - "Open source"
+        - "No API costs"
+        - "Data privacy"
+        - "Custom deployment"
+      best_for:
+        - "Privacy-sensitive data"
+        - "On-premise deployment"
+        - "Cost optimization"
+      latency: "medium"
+      accuracy: "high"
+      deployment: "local"
+      
+    llama-3.2-3b:
+      provider: "meta"
+      model_name: "llama-3.2-3b"
+      context_window: 128000
+      max_tokens: 4096
+      cost_per_1k_tokens:
+        input: 0.0
+        output: 0.0
+      strengths:
+        - "Very small model"
+        - "Fast inference"
+        - "Edge deployment"
+        - "Low resource requirements"
+      best_for:
+        - "Edge computing"
+        - "Low-resource environments"
+        - "Mobile applications"
+      latency: "fast"
+      accuracy: "medium"
+      deployment: "local"
+
+  mistral:
+    mixtral-8x7b:
+      provider: "mistral"
+      model_name: "mixtral-8x7b"
+      context_window: 32768
+      max_tokens: 4096
+      cost_per_1k_tokens:
+        input: 0.0007
+        output: 0.0007
+      strengths:
+        - "Mixture of experts"
+        - "Cost-effective"
+        - "Good performance"
+      best_for:
+        - "General data engineering"
+        - "Cost-optimized workflows"
+        - "Balanced performance"
+      latency: "fast"
+      accuracy: "high"
+      
+    mistral-large:
+      provider: "mistral"
+      model_name: "mistral-large"
+      context_window: 32768
+      max_tokens: 4096
+      cost_per_1k_tokens:
+        input: 0.004
+        output: 0.012
+      strengths:
+        - "High performance"
+        - "Function calling"
+        - "Complex reasoning"
+      best_for:
+        - "Complex data transformation"
+        - "Advanced reasoning tasks"
+        - "Function calling workflows"
+      latency: "medium"
+      accuracy: "very_high"
+
+# Model Selection Guidelines
+selection_guidelines:
+  data_cleaning:
+    recommended: ["claude-3-sonnet", "gpt-4-turbo", "mixtral-8x7b"]
+    cost_optimized: ["llama-3.1-70b", "mixtral-8x7b", "claude-3-haiku"]
+    latency_sensitive: ["claude-3-haiku", "gemini-flash", "llama-3.2-3b"]
+    
+  sql_generation:
+    recommended: ["gpt-4-turbo", "claude-3-opus", "mistral-large"]
+    cost_optimized: ["mixtral-8x7b", "llama-3.1-70b"]
+    latency_sensitive: ["gemini-flash", "claude-3-haiku"]
+    
+  data_documentation:
+    recommended: ["claude-3-sonnet", "gpt-4-turbo", "gemini-pro"]
+    cost_optimized: ["llama-3.1-70b", "mixtral-8x7b"]
+    latency_sensitive: ["claude-3-haiku", "gemini-flash"]
+    
+  real_time_processing:
+    recommended: ["claude-3-haiku", "gemini-flash", "llama-3.2-3b"]
+    cost_optimized: ["llama-3.2-3b", "gemini-flash"]
+    
+  complex_reasoning:
+    recommended: ["gpt-4-turbo", "claude-3-opus", "mistral-large"]
+    cost_optimized: ["mixtral-8x7b", "llama-3.1-70b"]

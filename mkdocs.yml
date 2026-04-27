@@ -1,0 +1,144 @@
+site_name: Prompt Engineering for AI Data Engineers
+site_description: Comprehensive course on prompt engineering for AI data engineers with multi-model support
+site_author: Your Name
+site_url: https://your-username.github.io/prompt-engineering-for-ai-data-engineers
+
+# Repository
+repo_url: https://github.com/your-username/prompt-engineering-for-ai-data-engineers
+repo_name: prompt-engineering-for-ai-data-engineers
+
+# Copyright
+copyright: Copyright &copy; 2024 Your Name
+
+# Theme
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.copy
+    - content.code.annotate
+  icon:
+    repo: fontawesome/brands/github
+
+# Plugins
+plugins:
+  - search
+  - minify
+  - git-revision-date-localized
+  - mkdocs-gen-files
+
+# Navigation
+nav:
+  - Home:
+    - index.md
+    - getting-started.md
+    - model-guide.md
+  - Modules:
+    - Module 1: Foundations:
+      - modules/module1-foundations/index.md
+      - modules/module1-foundations/overview.md
+      - modules/module1-foundations/setup.md
+      - modules/module1-foundards/model-selection.md
+    - Module 2: Data Cleaning:
+      - modules/module2-data-cleaning/index.md
+      - modules/module2-data-cleaning/techniques.md
+      - modules/module2-data-cleaning/models.md
+    - Module 3: ETL Enhancement:
+      - modules/module3-etl-enhancement/index.md
+      - modules/module3-etl-enhancement/strategies.md
+    - Module 4: Data Documentation:
+      - modules/module4-documentation/index.md
+      - modules/module4-documentation/automation.md
+    - Module 5: SQL Optimization:
+      - modules/module5-sql-optimization/index.md
+      - modules/module5-sql-optimization/techniques.md
+    - Module 6: Data Governance:
+      - modules/module6-governance/index.md
+      - modules/module6-governance/compliance.md
+    - Module 7: Real-time Processing:
+      - modules/module7-realtime/index.md
+      - modules/module7-realtime/architectures.md
+    - Module 8: Advanced Techniques:
+      - modules/module8-advanced/index.md
+      - modules/module8-advanced/multimodal.md
+    - Module 9: Modern Data Stack:
+      - modules/module9-modern-stack/index.md
+      - modules/module9-modern-stack/integrations.md
+    - Module 10: Production Deployment:
+      - modules/module10-production/index.md
+      - modules/module10-production/mlops.md
+    - Module 11: Model-Specific Techniques:
+      - modules/module11-model-specific/index.md
+      - modules/module11-model-specific/openai.md
+      - modules/module11-model-specific/anthropic.md
+      - modules/module11-model-specific/gemini.md
+      - modules/module11-model-specific/llama.md
+    - Module 12: Cost Optimization:
+      - modules/module12-cost-optimization/index.md
+      - modules/module12-cost-optimization/strategies.md
+  - Reference:
+    - api-reference.md
+    - cost-analysis.md
+    - deployment-guides/index.md
+  - Community:
+    - contributing.md
+    - code-of-conduct.md
+
+# Extensions
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+# Extra
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-username/prompt-engineering-for-ai-data-engineers
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/prompt-engineering-for-ai-data-engineers/
+  version:
+    provider: mike
+    default: latest
+
+# Analytics
+extra_analytics:
+  provider: google
+  property: G-XXXXXXXXXX
