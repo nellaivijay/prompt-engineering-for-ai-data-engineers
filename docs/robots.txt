@@ -1,0 +1,14 @@
+# robots.txt for GitHub Pages
+# Allow all web robots to scan the site
+User-agent: *
+Allow: /
+
+# Disallow specific paths if needed
+Disallow: /private/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://nellaivijay.github.io/prompt-engineering-for-ai-data-engineers/sitemap.xml
+
+# Crawl-delay (optional, to prevent overloading the server)
+Crawl-delay: 1

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {% if page and page.meta and page.meta.description %}
+    <meta name="description" content="{{ page.meta.description }}">
+  {% else %}
+    <meta name="description" content="{{ config.site_description }}">
+  {% endif %}
+  
+  {% if page and page.meta and page.meta.keywords %}
+    <meta name="keywords" content="{{ page.meta.keywords }}">
+  {% else %}
+    <meta name="keywords" content="prompt engineering, data engineering, AI, LLM, OpenAI, Anthropic, Gemini, Llama, Mistral, data cleaning, ETL, SQL generation, data governance, cost optimization, machine learning">
+  {% endif %}
+  
+  <meta name="author" content="{{ config.site_author }}">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.canonical_url }}">
+  <meta property="og:title" content="{% if page and page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}">
+  <meta property="og:description" content="{% if page and page.meta and page.meta.description %}{{ page.meta.description }}{% else %}{{ config.site_description }}{% endif %}">
+  <meta property="og:image" content="https://repository-images.githubusercontent.com/your-image-url">
+  <meta property="og:site_name" content="{{ config.site_name }}">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{ page.canonical_url }}">
+  <meta property="twitter:title" content="{% if page and page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}">
+  <meta property="twitter:description" content="{% if page and page.meta and page.meta.description %}{{ page.meta.description }}{% else %}{{ config.site_description }}{% endif %}">
+  <meta property="twitter:image" content="https://repository-images.githubusercontent.com/your-image-url">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ page.canonical_url }}">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalCourse",
+    "name": "{{ config.site_name }}",
+    "description": "{{ config.site_description }}",
+    "provider": {
+      "@type": "Organization",
+      "name": "{{ config.site_author }}",
+      "url": "{{ config.repo_url }}"
+    },
+    "inLanguage": "en",
+    "educationalLevel": "Beginner to Advanced",
+    "learningResourceType": "Course",
+    "teaches": [
+      "Prompt Engineering",
+      "Data Engineering",
+      "AI Integration",
+      "LLM Optimization",
+      "Data Pipeline Enhancement",
+      "SQL Generation",
+      "Data Governance",
+      "Cost Optimization"
+    ]
+  }
+  </script>
+{% endblock %}

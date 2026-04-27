@@ -1,245 +1,267 @@
-# GitHub Repository Configuration Guide
+# GitHub Pages and Wiki Setup Guide
 
-This guide provides step-by-step instructions for configuring your GitHub repository for optimal open-source collaboration and automation.
+This guide provides step-by-step instructions for setting up GitHub Pages and Wiki for the prompt-engineering-for-ai-data-engineers repository.
 
-## ✅ Completed Tasks
+## GitHub Pages Setup
 
-1. ✅ **Repository verified** - All files successfully pushed to https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers
-2. ✅ **README badges added** - Professional badges for license, Python version, code style, CI/CD, and documentation
-3. ✅ **Repository URL updated** - Correct clone URL in README
-4. ✅ **All 12 module structures created** - Complete content framework for entire course
+### Step 1: Enable GitHub Pages
 
-## 🔧 Manual GitHub Configuration Steps
+1. Go to your repository: https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers
+2. Click on the **"⚙️ Settings"** tab
+3. Scroll down to the **"Pages"** section in the left sidebar
+4. Under **"Build and deployment"**, select **"GitHub Actions"** as the source
+5. Click **"Save"**
 
-### Step 2: Enable GitHub Actions
+### Step 2: Configure GitHub Actions for Pages
 
-**Location**: Repository Settings → Actions → General
+The repository already includes a GitHub Actions workflow for documentation deployment (`.github/workflows/documentation.yml`). This will automatically build and deploy your documentation to GitHub Pages.
 
-1. Navigate to your repository on GitHub
-2. Click on **Settings** tab
-3. Click on **Actions** in the left sidebar
-4. Under **Actions permissions**, select:
-   - ✅ **Allow all actions and reusable workflows**
-   - ✅ **Allow GitHub Actions to create and approve pull requests**
-   - ✅ **Allow GitHub Actions to run comment-based workflows**
-5. Click **Save**
+### Step 3: Verify Deployment
 
-### Step 3: Set up GitHub Pages for Documentation
+1. Wait for the GitHub Actions workflow to complete (check the "Actions" tab)
+2. Once complete, your site will be available at: `https://nellaivijay.github.io/prompt-engineering-for-ai-data-engineers/`
+3. You can also find the URL in the Pages section of Settings
 
-**Location**: Repository Settings → Pages
+### Step 4: Custom Domain (Optional)
 
-1. Navigate to your repository on GitHub
-2. Click on **Settings** tab
-3. Click on **Pages** in the left sidebar
-4. Under **Build and deployment**, select:
-   - **Source**: GitHub Actions
-   - **Workflow**: This will automatically use the `documentation.yml` workflow we created
-5. Click **Save**
+If you want to use a custom domain:
 
-The documentation will be automatically built and deployed to: `https://nellaivijay.github.io/prompt-engineering-for-ai-data-engineers/`
+1. In the Pages section, click on **"Custom domain"**
+2. Enter your domain (e.g., `prompt-engineering.yourdomain.com`)
+3. Configure DNS settings with your domain provider
+4. Enable **"Enforce HTTPS"**
 
-### Step 4: Configure Branch Protection for Main Branch
+## GitHub Wiki Setup
 
-**Location**: Repository Settings → Branches
+### Step 1: Access Wiki
 
-1. Navigate to your repository on GitHub
-2. Click on **Settings** tab
-3. Click on **Branches** in the left sidebar
-4. Click on **Add rule** (or edit the main branch rule)
-5. Configure the following settings:
-   
-   **Branch name pattern**: `main`
-   
-   **Branch protection rules**:
-   - ✅ **Require a pull request before merging**
-   - ✅ **Require approvals**: 1 approval
-   - ✅ **Require status checks to pass before merging**
-     - Select: `ci.yml` (or all required checks)
-   - ✅ **Require branches to be up to date before merging**
-   - ✅ **Do not allow bypassing the above settings**
-   
-   **Branch restrictions**:
-   - ✅ **Restrict who can push to matching branches**
-   - Select: Only allow administrators (or your team)
+1. Go to your repository: https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers
+2. Click on the **"Wiki"** tab in the repository navigation
 
-6. Click **Create** or **Save changes**
+### Step 2: Import Wiki Pages
 
-### Step 5: Add Repository Topics
+The repository includes pre-created wiki pages in the `wiki/` directory. To import them:
 
-**Location**: Repository main page → About section
+1. On the Wiki page, click on **"Add the whole wiki"** or **"Import pages"**
+2. You may need to manually create pages since GitHub doesn't support bulk import from a directory
 
-1. Navigate to your repository main page
-2. Click on the **gear icon** in the top right corner (About section)
-3. Under **Topics**, add the following topics (one at a time):
-   - `prompt-engineering`
-   - `data-engineering`
-   - `artificial-intelligence`
-   - `llm`
-   - `machine-learning`
-   - `python`
-   - `mlops`
-   - `etl`
-   - `data-quality`
-   - `sql`
-   - `multi-model`
-   - `ai`
-   - `data-pipeline`
-   - `automation`
+### Step 3: Create Wiki Pages Manually
 
-4. Click **Save topics**
+For each markdown file in the `wiki/` directory:
 
-### Step 6: Create Your First Content (Already Done)
+1. Click **"New Page"** in the Wiki
+2. Copy the content from the corresponding `.md` file in the `wiki/` directory
+3. Paste the content into the wiki editor
+4. Add the page title (usually the first heading)
+5. Click **"Save"**
 
-✅ **All 12 module structures are created** with README files providing:
-- Learning objectives
-- Key topics
-- Prerequisites
-- Next steps
+**Wiki Pages to Create**:
+- Home (from `wiki/Home.md`)
+- Getting Started (from `wiki/Getting-Started.md`)
+- Model Configuration (from `wiki/Model-Configuration.md`)
+- Troubleshooting (from `wiki/Troubleshooting.md`)
+- Contributing (from `wiki/Contributing.md`)
 
-**Next**: Add detailed content to each module (notebooks, examples, exercises)
+### Step 4: Organize Wiki Structure
 
-### Step 7: Enable Issues for Community Feedback
+1. On the Wiki page, click **"Edit sidebar"**
+2. Add the pages in this order:
+   - Home
+   - Getting Started
+   - Model Configuration
+   - Troubleshooting
+   - Contributing
+3. Click **"Save"**
 
-**Location**: Repository Settings → General
+## SEO Optimization
 
-1. Navigate to your repository on GitHub
-2. Click on **Settings** tab
-3. In the **Features** section:
-   - ✅ **Issues** - should be enabled by default
-4. Scroll to bottom and click **Save changes**
+### SEO Features Already Implemented
 
-**Optional**: Add Issue Templates
-1. Click on **Settings** → **Issues** → **Templates**
-2. Add templates for:
-   - Bug Report
-   - Feature Request
-   - Documentation Issue
-   - Question
+The documentation includes comprehensive SEO optimization:
 
-### Step 8: Add Repository Description
+1. **Enhanced Meta Tags**: Title, description, keywords for each page
+2. **Open Graph Tags**: For social media sharing
+3. **Twitter Cards**: For Twitter sharing
+4. **Structured Data (JSON-LD)**: For search engines
+5. **Sitemap**: Automatically generated by mkdocs
+6. **Robots.txt**: Configured for proper crawling
+7. **Canonical URLs**: To prevent duplicate content issues
 
-**Location**: Repository main page → About section
+### Verify SEO Setup
 
-1. Navigate to your repository main page
-2. Click on the **gear icon** in the top right corner (About section)
-3. Under **Description**, add:
+1. **Check Sitemap**: Visit `https://nellaivijay.github.io/prompt-engineering-for-ai-data-engineers/sitemap.xml`
+2. **Test with Tools**: Use Google Search Console or SEO tools
+3. **Check Meta Tags**: Use browser developer tools to inspect page metadata
+4. **Test Structured Data**: Use Google's Structured Data Testing Tool
 
+### Submit to Search Engines
+
+1. **Google Search Console**:
+   - Go to https://search.google.com/search-console
+   - Add your GitHub Pages URL as a property
+   - Verify ownership (using HTML file or DNS)
+   - Submit your sitemap
+
+2. **Bing Webmaster Tools**:
+   - Go to https://www.bing.com/webmasters
+   - Add your site
+   - Verify ownership
+   - Submit your sitemap
+
+## Analytics Setup
+
+### Google Analytics
+
+1. Go to https://analytics.google.com
+2. Create a new account and property
+3. Get your tracking ID (format: `G-XXXXXXXXXX`)
+4. Update the tracking ID in `mkdocs.yml`:
+   ```yaml
+   extra:
+     analytics:
+       provider: google
+       property: G-YOUR_TRACKING_ID  # Replace with your actual ID
+   ```
+5. Commit and push the changes
+
+### GitHub Pages Analytics
+
+GitHub provides built-in analytics:
+
+1. Go to repository Settings > Pages
+2. Scroll to the "Analytics" section
+3. GitHub Pages analytics are automatically enabled
+
+## Customization Options
+
+### Update Site Information
+
+Edit `mkdocs.yml` to customize:
+
+```yaml
+site_name: Your Site Name
+site_description: Your site description
+site_author: Your Name
+site_url: https://your-username.github.io/your-repo
 ```
-Comprehensive course on prompt engineering for AI data engineers with multi-model support (OpenAI, Anthropic, Google, Meta, Mistral). Features 12 modules covering data cleaning, ETL, documentation, SQL, governance, real-time processing, and production deployment with cost optimization.
+
+### Update Social Links
+
+Edit the social links in `mkdocs.yml`:
+
+```yaml
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-username/your-repo
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/your-username
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/your-username
 ```
 
-4. Under **Website**, add:
+### Customize Theme
+
+Modify the theme settings in `mkdocs.yml`:
+
+```yaml
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo  # Change primary color
+      accent: indigo    # Change accent color
 ```
-https://nellaivijay.github.io/prompt-engineering-for-ai-data-engineers/
-```
 
-5. Click **Save changes**
+## Troubleshooting
 
-## 🚀 Additional Recommended Configurations
+### GitHub Pages Not Deploying
 
-### Enable Discussions
+**Problem**: GitHub Actions workflow fails
 
-**Location**: Repository Settings → Features
+**Solutions**:
+1. Check the Actions tab for error logs
+2. Ensure all dependencies are in requirements.txt
+3. Verify the workflow file is correct
+4. Check that the branch is set to main
 
-1. Navigate to **Settings** → **Features**
-2. ✅ **Discussions** - Enable for community conversations
-3. This creates a space for questions and discussions separate from issues
+### Wiki Pages Not Loading
 
-### Enable Security Advisories
+**Problem**: Wiki pages show formatting errors
 
-**Location**: Repository Settings → Features
+**Solutions**:
+1. Ensure markdown syntax is correct
+2. Check for broken links
+3. Verify image paths (use absolute URLs for external images)
+4. Test in the wiki preview before saving
 
-1. Navigate to **Settings** → **Features**
-2. ✅ **Security advisories** - Enable for security vulnerability reporting
-3. This provides a secure way to report security issues
+### SEO Not Working
 
-### Add Sponsor Button (Optional)
+**Problem**: Site not appearing in search results
 
-**Location**: Repository Settings → Sponsorships
+**Solutions**:
+1. Verify sitemap is accessible
+2. Check robots.txt allows crawling
+3. Submit to Google Search Console
+4. It may take time for search engines to index new sites
 
-1. Navigate to **Settings** → **Sponsorships**
-2. Set up GitHub Sponsors if you'd like to accept financial support
-3. Add a sponsor button to your README
+## Maintenance
 
-### Enable Code Owners (Optional)
+### Regular Tasks
 
-**Location**: Repository Settings → Code Owners
+- **Weekly**: Check analytics and user feedback
+- **Monthly**: Update dependencies, review SEO performance
+- **Quarterly**: Review and update content, check for broken links
+- **Annually**: Review overall strategy and goals
 
-1. Create a `CODEOWNERS` file in the repository root
-2. Define code ownership rules for different directories
-3. This helps with review assignments and access control
+### Updating Documentation
 
-### Add Social Preview (Optional)
+1. Edit markdown files in the `docs/` directory
+2. Test locally: `mkdocs serve`
+3. Commit and push changes
+4. GitHub Actions will automatically deploy
 
-**Location**: Repository Settings → Social Preview
+### Updating Wiki
 
-1. Enable social preview to see how repository links appear on social media
-2. Add social media accounts if desired
+1. Edit wiki pages directly on GitHub
+2. Or edit markdown files in `wiki/` directory and manually update
+3. Keep wiki synchronized with documentation
 
-### Configure Branch Names (Optional)
+## Best Practices
 
-**Location**: Repository Settings → Branches
+### GitHub Pages
 
-1. If you prefer different branch naming conventions
-2. Update the default branch name if needed
-3. This is optional and not required for this project
+- Use descriptive URLs
+- Keep page load times fast
+- Ensure mobile responsiveness
+- Use alt text for images
+- Keep content up to date
 
-## 📊 Repository Status Summary
+### Wiki
 
-### ✅ Completed
-- Repository created and verified
-- All files pushed to GitHub
-- README with professional badges
-- Complete 12-module structure
-- CI/CD workflows configured
-- Documentation workflow ready
-- MIT License included
-- Contribution guidelines provided
+- Organize content logically
+- Use clear headings
+- Include examples and code snippets
+- Add internal links between related pages
+- Regularly review and update content
 
-### 🔧 Manual Configuration Required
-- GitHub Actions enablement
-- GitHub Pages setup
-- Branch protection rules
-- Repository topics
-- Issues enablement
-- Repository description
+### SEO
 
-### 📝 Next Steps After Configuration
+- Use relevant keywords naturally
+- Create high-quality, original content
+- Build internal links
+- Optimize images (compress, use alt text)
+- Monitor performance and make improvements
 
-1. **Test GitHub Actions** - Push a small change to verify CI/CD works
-2. **Verify documentation deployment** - Check if GitHub Pages builds correctly
-3. **Create first notebook** - Add actual content to Module 1
-4. **Add example datasets** - Populate the data directory
-5. **Set up project boards** - Create GitHub Projects for task management
-6. **Add labels to issues** - Create issue labels for better organization
-7. **Write release notes** - Document what's included in v0.1.0
-8. **Create first release** - Tag and release version 0.1.0
+## Additional Resources
 
-## 🎯 Repository URLs
-
-- **Repository**: https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers
-- **Documentation** (after Pages setup): https://nellaivijay.github.io/prompt-engineering-for-ai-data-engineers/
-- **Issues**: https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers/issues
-- **Pull Requests**: https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers/pulls
-- **Actions**: https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers/actions
-
-## 📋 Quick Checklist
-
-Use this checklist to ensure all configurations are complete:
-
-- [ ] GitHub Actions enabled
-- [ ] GitHub Pages configured
-- [ ] Branch protection rules set for main branch
-- [ ] Repository topics added (prompt-engineering, data-engineering, AI, etc.)
-- [ ] Issues enabled
-- [ ] Repository description added
-- [ ] Website URL added to About section
-- [ ] Discussions enabled (optional)
-- [ ] Security advisories enabled (optional)
-- [ ] CODEOWNERS file created (optional)
-- [ ] Project boards created (optional)
-- [ ] Issue labels configured (optional)
+- [GitHub Pages Documentation](https://docs.github.com/en/pages)
+- [GitHub Wiki Documentation](https://docs.github.com/en/communities/documenting-your-project-with-wikis)
+- [MkDocs Documentation](https://www.mkdocs.org/)
+- [Material Theme Documentation](https://squidfunk.github.io/mkdocs-material/)
+- [Google Search Console](https://search.google.com/search-console)
+- [SEO Best Practices](https://developers.google.com/search/docs)
 
 ---
 
-Your repository is now fully structured and ready for the manual GitHub configuration steps. Once you complete these steps, the repository will have professional-grade open-source project configuration!
+**Last Updated**: 2024-04-26

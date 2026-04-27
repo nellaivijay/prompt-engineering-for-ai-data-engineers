@@ -1,19 +1,20 @@
 site_name: Prompt Engineering for AI Data Engineers
-site_description: Comprehensive course on prompt engineering for AI data engineers with multi-model support
-site_author: Your Name
-site_url: https://your-username.github.io/prompt-engineering-for-ai-data-engineers
+site_description: Comprehensive course on prompt engineering for AI data engineers with multi-model support. Master data cleaning, ETL optimization, SQL generation, and cost-effective AI implementation in data pipelines using OpenAI, Anthropic, Gemini, Llama, and Mistral.
+site_author: nellaivijay
+site_url: https://nellaivijay.github.io/prompt-engineering-for-ai-data-engineers
 
 # Repository
-repo_url: https://github.com/your-username/prompt-engineering-for-ai-data-engineers
+repo_url: https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers
 repo_name: prompt-engineering-for-ai-data-engineers
 
 # Copyright
-copyright: Copyright &copy; 2024 Your Name
+copyright: Copyright &copy; 2024 nellaivijay
 
 # Theme
 theme:
   name: material
   language: en
+  custom_dir: docs/overrides
   palette:
     - scheme: default
       primary: indigo
@@ -39,14 +40,21 @@ theme:
     - content.tabs.link
     - content.code.copy
     - content.code.annotate
+    - meta
   icon:
     repo: fontawesome/brands/github
 
 # Plugins
 plugins:
-  - search
-  - minify
+  - search:
+      lang: en
+  - minify:
+      minify_html: true
   - git-revision-date-localized
+  - sitemap:
+      change_frequency: weekly
+      priority: 0.8
+  - meta
 
 # Navigation
 nav:
@@ -130,14 +138,12 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/your-username/prompt-engineering-for-ai-data-engineers
+      link: https://github.com/nellaivijay/prompt-engineering-for-ai-data-engineers
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/prompt-engineering-for-ai-data-engineers/
   version:
     provider: mike
     default: latest
-
-# Analytics
-extra_analytics:
-  provider: google
-  property: G-XXXXXXXXXX
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
