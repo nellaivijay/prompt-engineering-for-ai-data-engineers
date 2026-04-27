@@ -7,7 +7,7 @@
 [![Documentation](https://img.shields.io/badge/docs-mkdocs-blue.svg)](https://nellaivijay.github.io/prompt-engineering-for-ai-data-engineers/)
 [![Contributing](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-A comprehensive, production-ready course on prompt engineering specifically designed for AI data engineers, featuring multi-model support across major AI platforms including OpenAI, Anthropic, Google Gemini, Meta Llama, Mistral, and more.
+A comprehensive, production-ready course on prompt engineering specifically designed for AI data engineers, featuring multi-model support across major AI platforms including OpenAI, Anthropic, Google Gemini, Meta Llama, Mistral, and more. Master advanced techniques for data cleaning, ETL/ELT optimization, SQL generation, data governance, and cost-effective AI implementation in data pipelines.
 
 ## 🎯 Course Overview
 
