@@ -6,7 +6,6 @@ This script verifies the installation and configuration of the course environmen
 
 import sys
 import os
-import subprocess
 import importlib
 from pathlib import Path
 
