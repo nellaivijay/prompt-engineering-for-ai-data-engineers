@@ -47,7 +47,6 @@ plugins:
   - search
   - minify
   - git-revision-date-localized
-  - mkdocs-gen-files
 
 # Navigation
 nav:
