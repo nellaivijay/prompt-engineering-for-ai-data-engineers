@@ -38,19 +38,20 @@ jobs:
       with:
         enable-cache: true
     
-    - name: Install dependencies
+    - name: Create virtual environment and install dependencies
       run: |
+        uv venv
         uv pip install --upgrade pip
         uv pip install -r requirements.txt
         uv pip install nbconvert pytest jupyter
     
     - name: Convert notebooks to Python scripts
       run: |
-        jupyter nbconvert --to python content/${{ matrix.module }}/*.ipynb
+        uv run jupyter nbconvert --to python content/${{ matrix.module }}/*.ipynb
     
     - name: Run notebook tests
       run: |
-        pytest content/${{ matrix.module }}/ --verbose
+        uv run pytest content/${{ matrix.module }}/ --verbose
       env:
         PYTHONPATH: ${{ github.workspace }}
     
@@ -81,18 +82,19 @@ jobs:
       with:
         enable-cache: true
     
-    - name: Install quality tools
+    - name: Create virtual environment and install quality tools
       run: |
+        uv venv
         uv pip install nbqa black isort flake8
     
     - name: Check notebook formatting
       run: |
-        nbqa black content/ --check
+        uv run nbqa black content/ --check
     
     - name: Check notebook imports
       run: |
-        nbqa isort content/ --check-only
+        uv run nbqa isort content/ --check-only
     
     - name: Lint notebooks
       run: |
-        nbqa flake8 content/
+        uv run nbqa flake8 content/

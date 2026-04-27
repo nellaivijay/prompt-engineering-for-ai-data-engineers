@@ -38,32 +38,33 @@ jobs:
       with:
         enable-cache: true
     
-    - name: Install dependencies
+    - name: Create virtual environment and install dependencies
       run: |
+        uv venv
         uv pip install --upgrade pip
         uv pip install -r requirements.txt
         uv pip install pytest pytest-cov flake8 mypy black
     
     - name: Lint with flake8
       run: |
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        uv run flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        uv run flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     
     - name: Check code formatting with black
       run: |
-        black --check .
+        uv run black --check .
     
     - name: Type check with mypy
       run: |
-        mypy tools/ --ignore-missing-imports
+        uv run mypy tools/ --ignore-missing-imports
     
     - name: Run unit tests with coverage
       run: |
-        pytest tests/ --cov=tools --cov-report=xml --cov-report=term
+        uv run pytest tests/ --cov=tools --cov-report=xml --cov-report=term
     
     - name: Generate coverage report (80%)
       run: |
-        pytest tests/ --cov=tools --cov-report=term --cov-fail-under=80
+        uv run pytest tests/ --cov=tools --cov-report=term --cov-fail-under=80
     
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v4
@@ -93,11 +94,15 @@ jobs:
       with:
         enable-cache: true
     
+    - name: Create virtual environment and install security tools
+      run: |
+        uv venv
+        uv pip install bandit
+    
     - name: Run Bandit Security Scan
       run: |
-        uv pip install bandit
-        bandit -r tools/ -f json -o bandit-report.json || true
-        bandit -r tools/
+        uv run bandit -r tools/ -f json -o bandit-report.json || true
+        uv run bandit -r tools/
     
     - name: Upload security scan results
       uses: actions/upload-artifact@v4
@@ -125,14 +130,15 @@ jobs:
       with:
         enable-cache: true
     
-    - name: Install dependencies
+    - name: Create virtual environment and install safety tools
       run: |
+        uv venv
         uv pip install safety
     
     - name: Check for security vulnerabilities
       run: |
-        safety check --json --output safety-report.json || true
-        safety check
+        uv run safety check --json --output safety-report.json || true
+        uv run safety check
     
     - name: Upload safety results
       uses: actions/upload-artifact@v4
@@ -160,22 +166,23 @@ jobs:
       with:
         enable-cache: true
 
-    - name: Install dependencies
+    - name: Create virtual environment and install dependencies
       run: |
+        uv venv
         uv pip install --upgrade pip
         uv pip install -r requirements.txt
         uv pip install pytest pytest-cov
 
     - name: Run integration tests (without API keys)
       run: |
-        pytest tests/integration/ --verbose --tb=short -m "not requires_api_key"
+        uv run pytest tests/integration/ --verbose --tb=short -m "not requires_api_key"
       env:
         PYTHONPATH: ${{ github.workspace }}
 
     - name: Run integration tests (with API keys if available)
       if: env.OPENAI_API_KEY != ''
       run: |
-        pytest tests/integration/ --verbose --tb=short
+        uv run pytest tests/integration/ --verbose --tb=short
       env:
         PYTHONPATH: ${{ github.workspace }}
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
